@@ -22,9 +22,6 @@
 
   // close connection
   mysqli_close($conn);
-
-  var_dump($pizzas);
-
 ?>
 
 <!doctype html>
