@@ -46,13 +46,14 @@
       $sql = "insert into pizzas(title, email, ingredients) values ('$title', '$email', '$ingredients')";
 
       // save to db and check
-      if(mysqli_query($conn, $sql)) {
+      if (mysqli_query($conn, $sql)) {
         // success
         header('Location: index.php');
       } else {
         // error
         echo 'query error: ' . mysqli_error($conn);
       }
+    }
   } // end of POST check
 
 ?>
