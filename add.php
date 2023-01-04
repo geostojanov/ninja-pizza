@@ -6,7 +6,6 @@
   $errors = array('email' => '', 'title' => '', 'ingredients' => '');
 
   if(isset($_POST['submit'])) {
-
     // check email
     if (empty($_POST['email'])) {
       $errors['email'] = 'An email is required <br />';
@@ -37,13 +36,8 @@
       }
     }
 
-    if (array_filter($errors)) {
-      /*echo 'errors in the form';*/
-
-    } else {
-
+    if (!array_filter($errors)) {
       // form is valid. save to db
-
       $email = mysqli_real_escape_string($conn, $_POST['email']);
       $title = mysqli_real_escape_string($conn, $_POST['title']);
       $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
@@ -59,9 +53,6 @@
         // error
         echo 'query error: ' . mysqli_error($conn);
       }
-
-    }
-
   } // end of POST check
 
 ?>
